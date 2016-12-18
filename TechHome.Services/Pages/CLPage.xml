@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>CLPage</Name>
+  <Elements>
+    <Element xsi:type="Link">
+      <Name>iframe</Name>
+      <Pattern>http://(\w|\.|\/)+#iframeload</Pattern>
+      <Elements>
+        <Element>
+          <Name>moive</Name>
+          <Pattern>http://(\w|\.|\/)+\.(mp4|avi)</Pattern>
+        </Element>
+      </Elements>
+    </Element>
+    <Element>
+      <Name>title</Name>
+      <Pattern>(?&lt;=&lt;title&gt;)(\w|\s)+(?=\[\d+\:\d+\])</Pattern>
+    </Element>
+  </Elements>
+</Page>

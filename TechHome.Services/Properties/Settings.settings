@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WebSpider.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PagesFolder" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Pages</Value>
+    </Setting>
+    <Setting Name="DownloadsFolder" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Downloads</Value>
+    </Setting>
+    <Setting Name="Downloader" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WebDownloader</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
