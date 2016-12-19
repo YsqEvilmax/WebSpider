@@ -58,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Downloaders\IDownloader.cs" />
-    <Compile Include="Downloaders\TDownloader.cs" />
     <Compile Include="Downloaders\WebDownloader.cs" />
     <Compile Include="Pages\XmlSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,7 +72,7 @@
     <Compile Include="Targets\Page.cs" />
     <Compile Include="Tasks\CLTask.cs" />
     <Compile Include="Tasks\ITask.cs" />
-    <Compile Include="WebSpider.cs" />
+    <Compile Include="Pages\WebSpider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\CLPage.xml">
@@ -81,9 +80,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
+    <Content Include="TechHome.Services.dll.config">
       <SubType>Designer</SubType>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Congigurations\unity.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

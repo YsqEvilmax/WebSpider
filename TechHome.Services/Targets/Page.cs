@@ -18,16 +18,7 @@ namespace TechHome.Services.Targets
         public Page()
         {
             Results = new List<Element>();
-        }
-
-        public string Value
-        {
-            get { return base.Value; }
-            set
-            {
-                base.Value = value;
-                SetOriginSource(value);
-            }
+            SetSource(this);
         }
 
         public static Page Get(string fileName)

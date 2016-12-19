@@ -16,8 +16,12 @@ namespace TechHome.Services
         public static IUnityContainer Default { get; private set; }
         static IoC()
         {
+            //Open the configuration file using the dll location
+            Configuration dllConfig = ConfigurationManager.OpenExeConfiguration(typeof(IoC).Assembly.Location);
+            // Get the unity section
+            ConfigurationSection unitySecion = dllConfig.GetSection("unity");
             Default = new UnityContainer();
-            Default.LoadConfiguration();
+            Default.LoadConfiguration(unitySecion as UnityConfigurationSection);
         }
 
         public static T Resolve<T>()

@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Downloaders\WebDownloaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Targets\LinkTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

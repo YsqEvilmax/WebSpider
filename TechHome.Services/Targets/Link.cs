@@ -21,15 +21,16 @@ namespace TechHome.Services.Targets
 
         public Uri Uri() { return new Uri(Value); }
 
-        public void SetOriginSource(string origin)
+        public void SetSource(Page source)
         {
+            if (source == null)
+            {
+                throw new ArgumentNullException(@"The source of an Element cannot be null!");
+            }
             foreach(var element in Elements)
             {
-                element.OriginSource = origin;
-                if(element is Link)
-                {
-                    (element as Link).SetOriginSource(origin);
-                }
+                element.Source = source;
+                (element as Link)?.SetSource(source);
             }
         }
     }

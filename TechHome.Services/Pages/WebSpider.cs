@@ -1,37 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using TechHome.Services.Targets;
 
-namespace TechHome.Services
+namespace TechHome.Services.Pages
 {
     class WebSpider
     {
-        public IDictionary<string, Page> Pages { get; private set; }
+        public List<Page> Pages { get; private set; }
 
         public WebSpider()
         {
-            Pages = new Dictionary<string, Page>();
+            Pages = new List<Page>();
         }
 
         public void FetchData(Link link)
         {
-            WebClient client = new WebClient();
-            client.Credentials = CredentialCache.DefaultCredentials;
-            client.Encoding = System.Text.Encoding.GetEncoding("GB2312");
-            try
+            using (var client = new WebClient())
             {
-                Byte[] pageData = client.DownloadData(link.Uri());
-                var content = Encoding.GetEncoding("GB2312").GetString(pageData);
-                if (link is Page)
+                client.Credentials = CredentialCache.DefaultCredentials;
+                client.Encoding = System.Text.Encoding.GetEncoding("GB2312");
+                try
                 {
-                    Pages.Add(new KeyValuePair<string, Page>(link.Uri().ToString(), link as Page));
-                }             
-                Analyze(content, link.Elements);
+                    Byte[] pageData = client.DownloadData(link.Uri());
+                    var content = Encoding.GetEncoding("GB2312").GetString(pageData);
+                    if (link is Page)
+                    {
+                        Pages.Add(link as Page);
+                    }
+                    Analyze(content, link.Elements);
+                }
+                catch (WebException) { }
             }
-            catch (WebException) { }
         }
 
         private void Analyze(string content, IList<Element> collection)
@@ -47,7 +50,7 @@ namespace TechHome.Services
                     }
                     else
                     {
-                        Pages[t.OriginSource].Results.Add(t);
+                        Pages.Find(x => x.Equals(t))?.Results.Add(t);
                     }
                 }
             }
