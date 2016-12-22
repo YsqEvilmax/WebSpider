@@ -7,14 +7,14 @@
       <Pattern>http://(\w|\.|\/)+#iframeload</Pattern>
       <Elements>
         <Element>
-          <Name>moive</Name>
+          <Name>movie</Name>
           <Pattern>http://(\w|\.|\/)+\.(mp4|avi)</Pattern>
         </Element>
       </Elements>
     </Element>
     <Element>
       <Name>title</Name>
-      <Pattern>(?&lt;=&lt;title&gt;)(\w|\s)+(?=\[\d+\:\d+\])</Pattern>
+      <Pattern>(?&lt;=&lt;title&gt;)(.)+(?=\[\d+\:\d+\])</Pattern>
     </Element>
   </Elements>
 </Page>

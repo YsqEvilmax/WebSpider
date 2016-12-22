@@ -58,6 +58,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Adapter\CLPageTaskAdapterTests.cs" />
     <Compile Include="Downloaders\WebDownloaderTests.cs" />
     <Compile Include="Targets\PageTests.cs" />
     <Compile Include="Pages\WebSpiderTests.cs" />

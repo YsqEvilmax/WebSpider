@@ -9,10 +9,14 @@ namespace TechHome.Services.Tasks
     public class CLTask
         : ITask
     {
+        public CLTask()
+        {
+            State = State.Ready;
+        }
         public Uri Uri { get; set; }
         public string FileName { get; set; }
         public string FolderPath { get { return Properties.Settings.Default["DownloadsFolder"] as string; } }
-        public string Comment { get { return "Aoto - download"; } }
+        public string Comment { get { return "Auto - download"; } }
         public State State
         {
             get
@@ -30,7 +34,6 @@ namespace TechHome.Services.Tasks
                 }
             }
         }
-
         private State _state;
         private readonly object _stateLocker = new object();
     }

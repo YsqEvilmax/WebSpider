@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\CLPageTaskAdapter.cs" />
+    <Compile Include="Adapters\PageCLTaskAdapter.cs" />
     <Compile Include="Downloaders\IDownloader.cs" />
     <Compile Include="Downloaders\WebDownloader.cs" />
     <Compile Include="Pages\XmlSerializer.cs" />

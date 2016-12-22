@@ -7,7 +7,7 @@
       <Pattern>//www.baidu.com/img/bd_logo1.png</Pattern>
     </Element>
     <Element>
-      <Name>SearchButton</Name>
+      <Name>search</Name>
       <Pattern>百度一下</Pattern>
     </Element>
   </Elements>

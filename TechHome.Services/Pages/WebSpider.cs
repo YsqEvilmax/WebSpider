@@ -58,7 +58,7 @@ namespace TechHome.Services.Pages
         private string ConvertEncoding(byte[] data)
         {
             var content = Encoding.Default.GetString(data);
-            var charset = Regex.Match(content, "(?<=charset=)(\\w|-)+(?=\">)").Value;
+            var charset = Regex.Match(content, "(?<=charset=)(\\w|-)+(?=\")").Value;
             if (!string.IsNullOrEmpty(charset))
             {
                 return Encoding.GetEncoding(charset.ToUpper()).GetString(data);
