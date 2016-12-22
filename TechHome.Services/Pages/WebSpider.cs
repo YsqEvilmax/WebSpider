@@ -8,7 +8,7 @@ using TechHome.Services.Targets;
 
 namespace TechHome.Services.Pages
 {
-    class WebSpider
+    public class WebSpider
     {
         public List<Page> Pages { get; private set; }
 
@@ -22,12 +22,11 @@ namespace TechHome.Services.Pages
             using (var client = new WebClient())
             {
                 client.Credentials = CredentialCache.DefaultCredentials;
-                client.Encoding = System.Text.Encoding.GetEncoding("GB2312");
                 try
                 {
-                    Byte[] pageData = client.DownloadData(link.Uri());
-                    var content = Encoding.GetEncoding("GB2312").GetString(pageData);
-                    if (link is Page)
+                    byte[] pageData = client.DownloadData(link.Uri());
+                    var content = ConvertEncoding(pageData);
+                    if (link is Page && !string.IsNullOrEmpty(content))
                     {
                         Pages.Add(link as Page);
                     }
@@ -44,16 +43,27 @@ namespace TechHome.Services.Pages
                 if(Regex.IsMatch(content, t.Pattern))
                 {
                     t.Value = Regex.Match(content, t.Pattern).Value;
-                    if (t.GetType() == typeof(Link))
+                    if (t is Link)
                     {
                         FetchData(t as Link);
                     }
                     else
                     {
-                        Pages.Find(x => x.Equals(t))?.Results.Add(t);
+                        Pages.Find(x => x.Equals(t.Source))?.Results.Add(t);
                     }
                 }
             }
+        }
+
+        private string ConvertEncoding(byte[] data)
+        {
+            var content = Encoding.Default.GetString(data);
+            var charset = Regex.Match(content, "(?<=charset=)(\\w|-)+(?=\">)").Value;
+            if (!string.IsNullOrEmpty(charset))
+            {
+                return Encoding.GetEncoding(charset.ToUpper()).GetString(data);
+            }
+            return content;
         }
     }
 }

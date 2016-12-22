@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\CLPageTaskAdapter.cs" />
     <Compile Include="Downloaders\IDownloader.cs" />
     <Compile Include="Downloaders\WebDownloader.cs" />
     <Compile Include="Pages\XmlSerializer.cs" />
@@ -70,11 +71,15 @@
     <Compile Include="Targets\Element.cs" />
     <Compile Include="Targets\Link.cs" />
     <Compile Include="Targets\Page.cs" />
+    <Compile Include="Adapters\IAdapter.cs" />
     <Compile Include="Tasks\CLTask.cs" />
     <Compile Include="Tasks\ITask.cs" />
     <Compile Include="Pages\WebSpider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\BaiduPage.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Pages\CLPage.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -84,6 +89,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="app.config" />
     <None Include="Congigurations\unity.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

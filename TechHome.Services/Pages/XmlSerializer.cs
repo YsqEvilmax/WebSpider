@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace TechHome.Services.Pages
 {
-    class XmlSerializer<T>
+    public class XmlSerializer<T>
         where T: class, new()
     {
         private readonly XmlSerializer _serializer = new XmlSerializer(typeof(T));

@@ -13,30 +13,25 @@ namespace TechHome.Services.Tasks
         public string FileName { get; set; }
         public string FolderPath { get { return Properties.Settings.Default["DownloadsFolder"] as string; } }
         public string Comment { get { return "Aoto - download"; } }
-        public State State { get; set; }
-    }
-
-    public class CLTaskManager
-    {
-        public List<ITask> Tasks { get; set; }
-        public CLTaskManager()
+        public State State
         {
-            Tasks = new List<ITask>();
-        }
-
-        public List<ITask> Manipulate(IList<Page> pages)
-        {
-            foreach(var page in pages.Where(x => x.Results.Count >= 2))
+            get
             {
-                Element movie = page.Results.First(x => x.Name.Equals("moive"));
-                Element title = page.Results.First(x => x.Name.Equals("title"));
-                string extension = Regex.Match(movie.Value, @"(?<=http://(\w|\.|\/)+)\.(mp4|avi)").Value;
-                Tasks.Add(new CLTask() {
-                    Uri = new Uri(movie.Value),
-                    FileName = title.Value + extension
-                });
+                lock (_stateLocker)
+                {
+                    return _state;
+                }
             }
-            return Tasks;
+            set
+            {
+                lock (_stateLocker)
+                {
+                    _state = value;
+                }
+            }
         }
+
+        private State _state;
+        private readonly object _stateLocker = new object();
     }
 }

@@ -13,12 +13,14 @@ namespace TechHome.Services.Downloaders.Tests
     public class WebDownloaderTests
     {
         [TestMethod()]
-        public void AddTaskTest()
+        public void WebDownloader_IoC_GetInstance()
         {
             var downloader = IoC.Resolve<IDownloader>();
-            var task = IoC.Resolve<ITask>();
             Assert.IsNotNull(downloader);
-            Assert.IsNotNull(task);
+        }
+        [TestMethod()]
+        public void AddTaskTest()
+        {
         }
     }
 }

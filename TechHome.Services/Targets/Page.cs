@@ -18,13 +18,15 @@ namespace TechHome.Services.Targets
         public Page()
         {
             Results = new List<Element>();
-            SetSource(this);
         }
 
         public static Page Get(string fileName)
         {
-            XmlSerializer<Page> ser = new XmlSerializer<Page>();
-            return ser.Deserialize(fileName);
+            string folder = Properties.Settings.Default["PagesFolder"] as string;
+            XmlSerializer<Page> ser = new XmlSerializer<Page>();    
+            Page page = ser.Deserialize(Path.Combine(folder, fileName));
+            page.SetSource(page);
+            return page;
         }
 
         public void Set()

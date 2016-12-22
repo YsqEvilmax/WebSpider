@@ -20,6 +20,7 @@ namespace TechHome.Services.Downloaders
         {
             WebClient client = new WebClient();
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((sender, e) => {
+                task.State = State.Downloading;
                 System.Console.WriteLine("{0} is downloading: {1}!", task.FileName, e.ProgressPercentage);
             });
             client.DownloadFileCompleted += new AsyncCompletedEventHandler((sender, e) => {
@@ -34,8 +35,7 @@ namespace TechHome.Services.Downloaders
                     Path.Combine(completed, task.FileName));
                 RoundUp();
             });
-            client.DownloadFileAsync(task.Uri, Path.Combine(task.FolderPath, task.FileName));
-            task.State = State.Downloading;
+            client.DownloadFileAsync(task.Uri, Path.Combine(task.FolderPath, task.FileName));         
         }
 
         public void AddTasks(List<ITask> tasks)
