@@ -6,10 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TechHome.Services.Downloaders;
-using TechHome.Services.Tasks;
 
-namespace TechHome.Services
+namespace TechHome.Cores
 {
     public class IoC
     {

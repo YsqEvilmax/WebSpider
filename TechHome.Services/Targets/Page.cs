@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
+using TechHome.Cores;
 using TechHome.Services.Pages;
 
 namespace TechHome.Services.Targets

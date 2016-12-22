@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 
-namespace TechHome.Services.Pages
+namespace TechHome.Cores
 {
     public class XmlSerializer<T>
         where T: class, new()

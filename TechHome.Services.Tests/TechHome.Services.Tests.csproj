@@ -70,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TechHome.Cores\TechHome.Cores.csproj">
+      <Project>{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}</Project>
+      <Name>TechHome.Cores</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TechHome.Services\TechHome.Services.csproj">
       <Project>{7CA1DF5B-0448-47CA-9E18-D959732112A6}</Project>
       <Name>TechHome.Services</Name>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechHome.Services.Tasks;
+using TechHome.Cores;
 
 namespace TechHome.Services.Downloaders.Tests
 {

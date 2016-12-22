@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Services", "TechHo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Services.Tests", "TechHome.Services.Tests\TechHome.Services.Tests.csproj", "{7C73EB7E-955F-4F97-8EE7-2174F59D2196}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Cores", "TechHome.Cores\TechHome.Cores.csproj", "{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7C73EB7E-955F-4F97-8EE7-2174F59D2196}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C73EB7E-955F-4F97-8EE7-2174F59D2196}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C73EB7E-955F-4F97-8EE7-2174F59D2196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
