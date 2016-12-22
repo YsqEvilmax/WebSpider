@@ -26,9 +26,9 @@ namespace TechHome.Services.Adapter.Tests
         public void Adapt_FromPages_ToTasks()
         {
             var para = new Dictionary<string, string>() {
-                { @"http://t66y.com/htm_data/22/1612/2187375.html", "CLPAge.xml" },
+                { @"http://t66y.com/htm_data/22/1612/2187375.html", "CLPage.xml" },
                 { @"http://www.baidu.com", "BaiduPage.xml" },
-                { @"http://t66y.com/htm_data/22/1612/2185040.html", "CLPAge.xml"}
+                { @"http://t66y.com/htm_data/22/1612/2185040.html", "CLPage.xml"}
             };
             var pages = new WebSpiderTests().FetchPages(para);
             var tasks = new PageCLTaskAdapter().Adapt(pages);
