@@ -1,4 +1,4 @@
-﻿/// <binding Clean='clean' />
+﻿/// <binding BeforeBuild='default' Clean='clean' />
 /*
 This file is the main entry point for defining Gulp tasks and using Gulp plugins.
 Click here to learn more. https://go.microsoft.com/fwlink/?LinkId=518007
@@ -9,28 +9,39 @@ var del = require('del');
 
 var path = {
     libs: {
-        angular: [
-            './node_modules/angular2/bundles/angular2.js',
-            './node_modules/angular2/bundles/router.js',
-            './node_modules/angular2/bundles/angular2-polyfills.min.js',
-            './node_modules/angular2/bundles/http.js'
-        ],
-        systemjs: [
-            './node_modules/systemjs/dist/system.src.js'           
-        ],
-        rxjs: [
-            './node_modules/rxjs/Rx.js'
-        ],
-        es6shim: [
-            './node_modules/es6-shim/es6-shim.js'
-        ]
+        angular: {
+            from: './node_modules/angular2/bundles/',
+            to:'./Scripts/',
+            files:[
+            'angular2.js',
+            'router.js',
+            'angular2-polyfills.js',
+            'http.js'
+            ]},
+        systemjs: {
+            from: './node_modules/systemjs/dist/',
+            to: './Scripts/',
+            files: ['system.src.js']           
+        },
+        rxjs: {
+            from: './node_modules/rxjs/',
+            to: './Scripts/',
+            files: [
+            'Rx.js',
+            'Rx.js.map'
+        ]},
+        es6shim: {
+            from: './node_modules/es6-shim/',
+            to: '/Scripts/',
+            files: ['es6-shim.js']
+        }
     }
 };
 
 gulp.task('clean', () => {
     var cleansub = (sub) => {
-        lodash.forEach(path.libs[sub], (file) => {
-            del(file);
+        lodash.forEach(path.libs[sub].files, (file) => {
+            del(path.libs[sub].to + file);
         });
     };
     cleansub('angular');
@@ -41,8 +52,9 @@ gulp.task('clean', () => {
 
 gulp.task('copy-libs', () => {
     var copysub = (sub) => {
-        lodash.forEach(path.libs[sub], (file) => {
-            gulp.src(file).pipe(gulp.dest('./Scripts'));
+        lodash.forEach(path.libs[sub].files, (file) => {
+            gulp.src(path.libs[sub].from + file)
+                .pipe(gulp.dest(path.libs[sub].to));
         });
     };
     copysub('angular');

@@ -173,7 +173,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Areas\WebSpider\Controllers\HomeController.cs" />
+    <Compile Include="Areas\WebSpider\Controllers\DefaultController.cs" />
     <Compile Include="Areas\WebSpider\Controllers\PagesController.cs" />
     <Compile Include="Areas\WebSpider\WebSpiderAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Scripts\system.config.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -215,7 +216,7 @@
     <Content Include="Areas\WebSpider\Views\web.config" />
     <Content Include="Areas\WebSpider\Views\_ViewStart.cshtml" />
     <Content Include="Areas\WebSpider\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\WebSpider\Views\Home\Index.cshtml" />
+    <Content Include="Areas\WebSpider\Views\Default\Index.cshtml" />
     <Content Include="package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

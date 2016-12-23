@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace TechHome.Webs.Areas.WebSpider.Controllers
 {
-    public class HomeController : Controller
+    public class DefaultController : Controller
     {
         // GET: WebSpider/Home
         public ActionResult Index()
