@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+    <script src="~/Scripts/system.js"></script>
+    <script src="~/Scripts/rx.js"></script>
+    <script src="~/Scripts/typescript.js"></script>
+    <script src="~/Scripts/angular2/angular2.dev.js"></script>
+    <script src="~/Scripts/angular2/angular2-polyfills.js"></script>
+    <script src="~/Scripts/angular2/http.dev.js"></script>
+    <script src="~/Scripts/angular2/router.dev.js"></script>
+    <!-- Configure SystemJS -->
+    <script>
+            System.config({
+                packages: {
+                    apps: {
+                        format: 'register',
+                        defaultExtension: 'js'
+                    }
+                }
+            });
+            System.import('apps/main')
+                  .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+</body>
+</html>

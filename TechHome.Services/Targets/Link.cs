@@ -19,7 +19,7 @@ namespace TechHome.Services.Targets
             Elements = new List<Element>();
         }
 
-        public Uri Uri() { return new Uri(Value); }
+        public Uri Uri() { return string.IsNullOrEmpty(Value)?null:new Uri(Value); }
 
         public void SetSource(Page source)
         {
