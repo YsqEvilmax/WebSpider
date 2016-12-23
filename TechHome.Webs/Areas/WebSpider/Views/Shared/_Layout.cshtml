@@ -7,11 +7,10 @@
     
     <script src="~/Scripts/system.js"></script>
     <script src="~/Scripts/rx.js"></script>
-    <script src="~/Scripts/typescript.js"></script>
-    <script src="~/Scripts/angular2/angular2.dev.js"></script>
-    <script src="~/Scripts/angular2/angular2-polyfills.js"></script>
-    <script src="~/Scripts/angular2/http.dev.js"></script>
-    <script src="~/Scripts/angular2/router.dev.js"></script>
+    <script src="~/Scripts/angular2.dev.js"></script>
+    <script src="~/Scripts/angular2-polyfills.js"></script>
+    <script src="~/Scripts/http.dev.js"></script>
+    <script src="~/Scripts/router.dev.js"></script>
     <!-- Configure SystemJS -->
     <script>
             System.config({
@@ -22,7 +21,7 @@
                     }
                 }
             });
-            System.import('apps/main')
+            System.import('Areas/WebSpider/Apps/main')
                   .then(null, console.error.bind(console));
     </script>
 </head>

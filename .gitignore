@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/TechHome.Webs/Areas/WebSpider/Apps/app.component.js.map
+/TechHome.Webs/Areas/WebSpider/Apps/app.component.js
+/TechHome.Webs/Areas/WebSpider/Apps/main.js.map
+/TechHome.Webs/Areas/WebSpider/Apps/main.js
+/TechHome.Webs/typings
