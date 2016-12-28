@@ -29,10 +29,10 @@ namespace TechHome.Services.Pages.Tests
         [TestMethod()]
         public void FetchData_CLPage_GetResult()
         {
-            var page = FetchPage("CLPage.xml", @"http://t66y.com/htm_data/22/1612/2187375.html");
-            Assert.AreEqual("91轻吻@商务模特系列之美院女孩儿720P完整版",
+            var page = FetchPage("CLPage.xml", @"http://t66y.com/htm_data/22/1612/2196077.html");
+            Assert.AreEqual("HEY-0652-美人姊妹極上味道前篇-小野麻里_1",
                 page.Results.Find(x => x.Name.Equals("title")).Value);
-            Assert.AreEqual("http://www.kdw521.com/get_file/3/6159246da3c9c19794de8aa68713fd68/37000/37285/37285.mp4",
+            Assert.AreEqual("http://www.kedou1.com/get_file/3/8567e15df01575700cdbdfdf537b6263/37000/37455/37455.mp4",
                 page.Results.Find(x => x.Name.Equals("movie")).Value);
         }
 
@@ -40,7 +40,7 @@ namespace TechHome.Services.Pages.Tests
         public void FetchData_MixedPages_GetResults()
         {
             var para = new Dictionary<string, string>() {
-                { @"http://t66y.com/htm_data/22/1612/2187375.html", "CLPAge.xml" },
+                { @"http://t66y.com/htm_data/22/1612/2196077.html", "CLPAge.xml" },
                 { @"http://www.baidu.com", "BaiduPage.xml" },
                 { @"http://t66y.com/htm_data/22/1612/2185040.html", "CLPAge.xml"}
             };

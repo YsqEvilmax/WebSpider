@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.25928.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome", "TechHome\TechHome.csproj", "{2C8326BF-4076-45A7-A783-A7DE0961994C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Services", "TechHome.Services\TechHome.Services.csproj", "{7CA1DF5B-0448-47CA-9E18-D959732112A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Services.Tests", "TechHome.Services.Tests\TechHome.Services.Tests.csproj", "{7C73EB7E-955F-4F97-8EE7-2174F59D2196}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Cores", "TechHome.Cores\TechHome.Cores.csproj", "{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Webs", "TechHome.Webs\TechHome.Webs.csproj", "{FB51BACB-9B5C-4D9D-AF5E-BE93A32B9EFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Webs", "TechHome.Webs\TechHome.Webs.csproj", "{0B63C028-0B99-4976-911E-6793FC3A6D19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechHome.Webs.Tests", "TechHome.Webs.Tests\TechHome.Webs.Tests.csproj", "{274A159C-4A5E-4125-A4E7-C00798376010}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2C8326BF-4076-45A7-A783-A7DE0961994C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C8326BF-4076-45A7-A783-A7DE0961994C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C8326BF-4076-45A7-A783-A7DE0961994C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C8326BF-4076-45A7-A783-A7DE0961994C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7CA1DF5B-0448-47CA-9E18-D959732112A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7CA1DF5B-0448-47CA-9E18-D959732112A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CA1DF5B-0448-47CA-9E18-D959732112A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +31,14 @@ Global
 		{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CA2D2EE-7021-43F7-9FAA-0C88464242BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB51BACB-9B5C-4D9D-AF5E-BE93A32B9EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB51BACB-9B5C-4D9D-AF5E-BE93A32B9EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB51BACB-9B5C-4D9D-AF5E-BE93A32B9EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB51BACB-9B5C-4D9D-AF5E-BE93A32B9EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B63C028-0B99-4976-911E-6793FC3A6D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B63C028-0B99-4976-911E-6793FC3A6D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B63C028-0B99-4976-911E-6793FC3A6D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B63C028-0B99-4976-911E-6793FC3A6D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274A159C-4A5E-4125-A4E7-C00798376010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274A159C-4A5E-4125-A4E7-C00798376010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274A159C-4A5E-4125-A4E7-C00798376010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274A159C-4A5E-4125-A4E7-C00798376010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
