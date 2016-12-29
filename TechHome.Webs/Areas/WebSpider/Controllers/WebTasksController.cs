@@ -21,7 +21,7 @@ namespace TechHome.Webs.Areas.WebSpider.Controllers
         {
             var pages = value.Select(
                 x => {
-                    var page = Page.Get(x.Template);
+                    var page = Page.GetFromFile(x.Template);
                     page.Value = x.Url;
                     return page;
                 }).ToList();

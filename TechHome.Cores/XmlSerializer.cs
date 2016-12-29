@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Text;
 using System.Xml.Serialization;
 
 namespace TechHome.Cores
@@ -7,25 +8,24 @@ namespace TechHome.Cores
         where T: class, new()
     {
         private readonly XmlSerializer _serializer = new XmlSerializer(typeof(T));
-        public void Serialize(T obj, string fileName)
+
+        public string Serialize(T obj)
         {
-            using(FileStream fs = new FileStream(fileName, FileMode.Create))
+            using (MemoryStream ms = new MemoryStream())
             {
-                using(StreamWriter sw = new StreamWriter(fs))
+                using (StreamWriter sw = new StreamWriter(ms))
                 {
                     _serializer.Serialize(sw, obj);
+                    return sw.ToString();
                 }
             }
         }
 
-        public T Deserialize(string fileName)
+        public T Deserialize(string content)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Open))
+            using (StringReader sr = new StringReader(content))
             {
-                using (StreamReader sw = new StreamReader(fs))
-                {
-                    return _serializer.Deserialize(sw) as T;
-                }
+                return _serializer.Deserialize(sr) as T;
             }
         }
     }

@@ -45,13 +45,13 @@ namespace TechHome.Services.Pages.Tests
                 { @"http://t66y.com/htm_data/22/1612/2185040.html", "CLPAge.xml"}
             };
             var pages = FetchPages(para);
-            Assert.AreEqual(3, pages.Count);
+            Assert.AreEqual(para.Count, pages.Count);
         }
 
         public Page FetchPage(string template, string url)
         {
             WebSpider spider = new WebSpider();
-            var page = Page.Get(template);
+            var page = Page.GetFromFile(template);
             page.Value = url;
             spider.FetchData(page);
             ValidatePages(spider.Pages);
@@ -63,7 +63,7 @@ namespace TechHome.Services.Pages.Tests
             WebSpider spider = new WebSpider();
             var pages = para.Select(
                 x => {
-                    var page = Page.Get(x.Value);
+                    var page = Page.GetFromFile(x.Value);
                     page.Value = x.Key;
                     return page;
                 }).ToList();

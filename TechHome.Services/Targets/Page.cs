@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 using TechHome.Cores;
 using TechHome.Services.Pages;
@@ -21,20 +22,49 @@ namespace TechHome.Services.Targets
             Results = new List<Element>();
         }
 
-        public static Page Get(string fileName)
+        public Page(Page e)
+            :base(e)
+        {
+            this.Results = e.Results.Select(x=>x).ToList();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Page e = obj as Page;
+            return base.Equals(obj) &
+                Results.SequenceEqual(e.Results);
+        }
+
+        public static Page GetFromFile(string fileName)
         {
             string folder = Properties.Settings.Default["PagesFolder"] as string;
-            XmlSerializer<Page> ser = new XmlSerializer<Page>();    
-            Page page = ser.Deserialize(Path.Combine(folder, fileName));
+            string content = File.ReadAllText(Path.Combine(folder, fileName));
+            return GetFromString(content);
+        }
+
+        public static Page GetFromString(string content)
+        {
+            XmlSerializer<Page> ser = new XmlSerializer<Page>();
+            Page page = ser.Deserialize(content);
             page.SetSource(page);
             return page;
         }
 
-        public void Set()
+        public void SetToFile()
         {
             string folder = Properties.Settings.Default["PagesFolder"] as string;
+            string content = SetToString();
+            File.WriteAllText(Path.Combine(folder, this.FileName), content);
+        }
+
+        public string SetToString()
+        {
             XmlSerializer<Page> ser = new XmlSerializer<Page>();
-            ser.Serialize(this, Path.Combine(folder, this.FileName));
+            return ser.Serialize(this);
         }
     }
 }

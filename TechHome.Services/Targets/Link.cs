@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TechHome.Services.Targets
 {
@@ -19,6 +20,12 @@ namespace TechHome.Services.Targets
             Elements = new List<Element>();
         }
 
+        public Link(Link e)
+            :base(e)
+        {
+            this.Elements = e.Elements.Select(x=>x).ToList();
+        }
+
         public Uri Uri() { return string.IsNullOrEmpty(Value)?null:new Uri(Value); }
 
         public void SetSource(Page source)
@@ -32,6 +39,17 @@ namespace TechHome.Services.Targets
                 element.Source = source;
                 (element as Link)?.SetSource(source);
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Link e = obj as Link;
+            return base.Equals(e) &
+                Elements.SequenceEqual(e.Elements);
         }
     }
 }

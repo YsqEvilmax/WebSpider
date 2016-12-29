@@ -11,9 +11,18 @@ namespace TechHome.Services.Targets.Tests
 {
     [TestClass()]
     public class LinkTests
+        : CopyEqualTests<Link>
     {
+        [TestInitialize()]
+        public void Initialize()
+        {
+            var addr = @"http://google.co.nz";
+            _e1 = new Link(addr);
+            _e2 = new Link(_e1);
+        }
+
         [TestMethod()]
-        public void Link_Create_ElementsNotEmpty()
+        public void Link_Constructor_ElementsNotEmpty()
         {
             Link link = new Link();
             Assert.IsNotNull(link);
@@ -21,7 +30,7 @@ namespace TechHome.Services.Targets.Tests
         }
 
         [TestMethod()]
-        public void Link_Create_SetDefaultValue()
+        public void Link_Constructor_SetDefaultValue()
         {
             var addr = @"http://google.co.nz";
             Link link = new Link(addr);
