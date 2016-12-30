@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 using TechHome.Cores;
 using TechHome.Services.Pages;
@@ -39,10 +40,11 @@ namespace TechHome.Services.Targets
                 Results.SequenceEqual(e.Results);
         }
 
-        public static Page GetFromFile(string fileName, string path = null)
+        public static Page GetFromFile(string fileName)
         {
+            string binPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).Replace(@"file:\", "");
             string folder = Properties.Settings.Default["PagesFolder"] as string;
-            string content = File.ReadAllText(Path.Combine(path, folder, fileName));
+            string content = File.ReadAllText(Path.Combine(binPath, folder, fileName));
             return GetFromString(content);
         }
 
@@ -54,11 +56,12 @@ namespace TechHome.Services.Targets
             return page;
         }
 
-        public void SetToFile(string path = null)
+        public void SetToFile()
         {
+            string binPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).Replace(@"file:\", "");
             string folder = Properties.Settings.Default["PagesFolder"] as string;
             string content = SetToString();
-            File.WriteAllText(Path.Combine(path, folder, this.FileName), content);
+            File.WriteAllText(Path.Combine(binPath, folder, this.FileName), content);
         }
 
         public string SetToString()

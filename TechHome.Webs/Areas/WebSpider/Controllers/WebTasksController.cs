@@ -23,10 +23,9 @@ namespace TechHome.Webs.Areas.WebSpider.Controllers
         // POST: api/WebTasks
         public IEnumerable<ITask> Fetch([FromBody]IEnumerable<WebTask> value)
         {
-            var binDirectoryPath = HttpContext.Current.Server.MapPath("~/bin");
             var pages = value.Select(
                 x => {
-                    var page = Page.GetFromFile(x.Template, binDirectoryPath);
+                    var page = Page.GetFromFile(x.Template);
                     page.Value = x.Url;
                     return page;
                 }).ToList();
