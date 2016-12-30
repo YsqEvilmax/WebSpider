@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using TechHome.Services.Targets;
 using TechHome.Services.Pages;
@@ -15,13 +16,17 @@ namespace TechHome.Webs.Areas.WebSpider.Controllers
     public class WebTasksController : ApiController
     {
         private Services.Pages.WebSpider _spider = new Services.Pages.WebSpider();
-
+        public HttpResponseMessage Options()
+        {
+            return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
+        }
         // POST: api/WebTasks
         public IEnumerable<ITask> Fetch([FromBody]IEnumerable<WebTask> value)
         {
+            var binDirectoryPath = HttpContext.Current.Server.MapPath("~/bin");
             var pages = value.Select(
                 x => {
-                    var page = Page.GetFromFile(x.Template);
+                    var page = Page.GetFromFile(x.Template, binDirectoryPath);
                     page.Value = x.Url;
                     return page;
                 }).ToList();

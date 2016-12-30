@@ -39,10 +39,10 @@ namespace TechHome.Services.Targets
                 Results.SequenceEqual(e.Results);
         }
 
-        public static Page GetFromFile(string fileName)
+        public static Page GetFromFile(string fileName, string path = null)
         {
             string folder = Properties.Settings.Default["PagesFolder"] as string;
-            string content = File.ReadAllText(Path.Combine(folder, fileName));
+            string content = File.ReadAllText(Path.Combine(path, folder, fileName));
             return GetFromString(content);
         }
 
@@ -54,11 +54,11 @@ namespace TechHome.Services.Targets
             return page;
         }
 
-        public void SetToFile()
+        public void SetToFile(string path = null)
         {
             string folder = Properties.Settings.Default["PagesFolder"] as string;
             string content = SetToString();
-            File.WriteAllText(Path.Combine(folder, this.FileName), content);
+            File.WriteAllText(Path.Combine(path, folder, this.FileName), content);
         }
 
         public string SetToString()
