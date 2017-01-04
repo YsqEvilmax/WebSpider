@@ -8,8 +8,8 @@ import { ApiService } from "../../services/api.service";
   styleUrls: ['./web-spider.component.css']
 })
 export class WebSpiderComponent implements OnInit {
-    tasks: TechHome.Webs.WebSpider.Models.WebTask;
-  results: TechHome.Services.Tasks.ITask[];
+  //  tasks: TechHome.Webs.WebSpider.Models.WebTask;
+  //results: TechHome.Services.Tasks.ITask[];
   //constructor(private api:ApiService) { }
 
   ngOnInit() {

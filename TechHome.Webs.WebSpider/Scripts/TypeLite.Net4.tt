@@ -7,7 +7,6 @@
 <#@ import namespace="TypeLite" #> 
 <#@ import namespace="TypeLite.Net4" #> 
 <#@ import namespace="TechHome.Webs.WebSpider.Models" #> 
-
 <#@output extension=".d.ts"#>
 
  <#@include file="Manager.ttinclude"#>
@@ -16,9 +15,9 @@
 <# var ts = TypeScript.Definitions()
 		.WithReference("Enums.ts")
 		.For<List>()
-		.For<Models.ViewModel.JSONReturnVM<object>>()
-		.For<WebTask>()
-		.For<TechHome.Services.Tasks.ITask>();
+		.For<Task>()
+		.For<TechHome.Services.Tasks.ITask>()
+		.For<WebTask>();
 #>
 
 <#= ts.Generate(TsGeneratorOutput.Properties) #>

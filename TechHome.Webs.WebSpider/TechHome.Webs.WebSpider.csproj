@@ -184,6 +184,8 @@
     <Compile Include="Models\Validation\ModelStateWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\components\todolist\todolist.component.css" />
+    <Content Include="app\components\todolist\todolist.component.html" />
     <Content Include="app\components\webspider\web-spider.component.css" />
     <Content Include="app\components\webspider\web-spider.component.html" />
     <Content Include="Content\bootstrap.css" />
@@ -192,13 +194,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="app\components\todolist\todolist.component.css" />
-    <Content Include="app\components\todolist\todolist.component.html" />
     <None Include="readme.md" />
     <Content Include="systemjs.config.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
+    <Content Include="Scripts\Manager.ttinclude" />
     <None Include="_typingsrc" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -230,7 +231,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="tsconfig.json" />
     <Content Include="typings.json" />
-    <Content Include="Scripts\Manager.ttinclude" />
     <Content Include="Views\Shared\DefineAngular.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -251,9 +251,9 @@
     <TypeScriptCompile Include="app\boottodolist.ts" />
     <TypeScriptCompile Include="app\components\todolist\todolist.component.ts" />
     <TypeScriptCompile Include="app\components\webspider\web-spider.component.ts" />
+    <TypeScriptCompile Include="app\services\api.service.ts" />
     <TypeScriptCompile Include="app\services\app.service.todolist.ts" />
     <TypeScriptCompile Include="app\services\http.service.ts" />
-    <TypeScriptCompile Include="app\services\api.service.ts" />
     <TypeScriptCompile Include="app\utils\HttpHelpers.ts" />
     <TypeScriptCompile Include="Scripts\Enums.ts">
       <DependentUpon>TypeLite.Net4.tt</DependentUpon>
