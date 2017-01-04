@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { ApiService } from "../../services/api.service";
+import ITask = TechHome.Services.Tasks.ITask;
 
 @Component({
   selector: 'web-spider',
@@ -8,21 +9,23 @@ import { ApiService } from "../../services/api.service";
   styleUrls: ['./web-spider.component.css']
 })
 export class WebSpiderComponent implements OnInit {
-  //  tasks: TechHome.Webs.WebSpider.Models.WebTask;
-  //results: TechHome.Services.Tasks.ITask[];
-  //constructor(private api:ApiService) { }
+    tasks: Models.WebTask[];
+  results: ITask[];
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
-      //this.tasks = [
-      //    {
-      //        url: "http://t66y.com/htm_data/22/1612/2196077.html",
-      //        template: "CLPage.xml"
-      //    }
-      //];
-      //this.api.apiBase = 'http://localhost:61797/api/WebTasks';
+      this.tasks = [
+          {
+              Url: "http://t66y.com/htm_data/22/1612/2196077.html",
+              Template: "CLPage.xml"
+          }
+      ];
+      this.api.apiBase = 'http://localhost:61797/api/WebTasks';
   }
 
-  //GetResults() {
-  //    this.results = this.api.createFrom<ITask[], WebTask[]>(this.tasks);
-  //}
+  GetResults() {
+      this.api.createFrom<ITask[], Models.WebTask[]>(this.tasks).then((res) => {
+          this.results = res;
+      });
+  }
 }

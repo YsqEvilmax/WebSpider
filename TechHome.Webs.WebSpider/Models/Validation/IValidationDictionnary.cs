@@ -1,7 +1,7 @@
-﻿namespace Validation
-{
-    using System;
+﻿using System;
 
+namespace TechHome.Webs.WebSpider.Models.Validation
+{
     public interface IValidationDictionary
     {
         void AddError(string key, Exception errorException);

@@ -1,8 +1,10 @@
 ﻿using System.Web.Mvc;
 using System.Linq;
+using TypeLite;
 
-namespace Models.ViewModel
+namespace TechHome.Webs.WebSpider.Models.ViewModel
 {
+    [TsClass(Module = "Models.ViewModel")]
     public class JSONReturnVM<T>
         where T : class
     {

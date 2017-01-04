@@ -6,18 +6,16 @@
 
 <#@ import namespace="TypeLite" #> 
 <#@ import namespace="TypeLite.Net4" #> 
-<#@ import namespace="TechHome.Webs.WebSpider.Models" #> 
+<#@ import namespace="TechHome.Services.Tasks" #> 
 <#@output extension=".d.ts"#>
 
  <#@include file="Manager.ttinclude"#>
 <# var manager = Manager.Create(Host, GenerationEnvironment); #>
 
 <# var ts = TypeScript.Definitions()
+		.ForLoadedAssemblies()
 		.WithReference("Enums.ts")
-		.For<List>()
-		.For<Task>()
-		.For<TechHome.Services.Tasks.ITask>()
-		.For<WebTask>();
+		.For<ITask>();
 #>
 
 <#= ts.Generate(TsGeneratorOutput.Properties) #>

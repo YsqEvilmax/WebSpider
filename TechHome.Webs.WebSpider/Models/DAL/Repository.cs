@@ -1,11 +1,11 @@
-﻿namespace Models.DAL
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Validation;
-    using System.Linq;
-    using Validation;
+﻿using System;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
+using System.Linq;
+using TechHome.Webs.WebSpider.Models.Validation;
 
+namespace TechHome.Webs.WebSpider.Models.DAL
+{
     public class Repository
     {
         private TodoListContext dbContext;

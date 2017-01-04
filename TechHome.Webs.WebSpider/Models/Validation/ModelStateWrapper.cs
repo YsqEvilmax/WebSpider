@@ -1,9 +1,8 @@
-﻿namespace WrapperExtensions
-{
-    using System;
-    using System.Web.Mvc;
-    using Validation;
+﻿using System;
+using System.Web.Mvc;
 
+namespace TechHome.Webs.WebSpider.Models.Validation
+{
     public class ModelStateWrapper : DefaultControllerFactory, IValidationDictionary
     {
         private ModelStateDictionary modelState;

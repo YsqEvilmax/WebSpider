@@ -7,22 +7,13 @@
 
 /// <reference path="Enums.ts" />
 
-declare module TechHome.Services.Tasks {
-	interface ITask {
-		Comment: string;
-		FileName: string;
-		FolderPath: string;
-		State: TechHome.Services.Tasks.State;
-		Uri: string;
-	}
-}
-declare module TechHome.Webs.WebSpider.Models {
+declare module Models {
 	interface List {
 		Count: number;
 		CountEnded: number;
 		Id: number;
 		Name: string;
-		Tasks: TechHome.Webs.WebSpider.Models.Task[];
+		Tasks: Models.Task[];
 	}
 	interface Task {
 		Ended: boolean;
@@ -33,6 +24,22 @@ declare module TechHome.Webs.WebSpider.Models {
 	interface WebTask {
 		Template: string;
 		Url: string;
+	}
+}
+declare module Models.ViewModel {
+	interface JSONReturnVM<T> {
+		element: T;
+		errormessage: string;
+		haserror: boolean;
+	}
+}
+declare module TechHome.Services.Tasks {
+	interface ITask {
+		Comment: string;
+		FileName: string;
+		FolderPath: string;
+		State: TechHome.Services.Tasks.State;
+		Uri: string;
 	}
 }
 

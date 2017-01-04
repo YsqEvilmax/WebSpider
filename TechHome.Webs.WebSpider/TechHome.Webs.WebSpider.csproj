@@ -172,12 +172,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAL\TodoListInitializer.cs" />
     <Compile Include="Models\ViewModel\JSONReturnVM.cs" />
     <Compile Include="Models\List.cs" />
     <Compile Include="Models\DAL\Repository.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\DAL\TodoListContext.cs" />
-    <Compile Include="Models\DAL\TodoListInitializer.cs" />
     <Compile Include="Models\WebTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Validation\IValidationDictionnary.cs" />
@@ -231,7 +231,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="tsconfig.json" />
     <Content Include="typings.json" />
-    <Content Include="Views\Shared\DefineAngular.cshtml" />
+    <Content Include="Views\Shared\_DefineAngular.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

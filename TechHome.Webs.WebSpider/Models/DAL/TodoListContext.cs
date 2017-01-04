@@ -1,9 +1,7 @@
-﻿using Models;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using TechHome.Webs.WebSpider.Models;
 
-namespace Models.DAL
+namespace TechHome.Webs.WebSpider.Models.DAL
 {
     public class TodoListContext : DbContext
     {

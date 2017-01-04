@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TypeLite;
 
 namespace TechHome.Webs.WebSpider.Models
 {
+    [TsClass(Module = "Models")]
     public class Task
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity), Key]

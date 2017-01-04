@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using TechHome.Webs.WebSpider.Models;
 
-namespace Models.DAL
+namespace TechHome.Webs.WebSpider.Models.DAL
 {
     public class TodoListInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<TodoListContext>
     {

@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TypeLite;
+using TypeLite.TsModels;
 
 namespace TechHome.Webs.WebSpider.Models
 {
+    [TsClass(Module = "Models")]
     public class List
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity), Key]

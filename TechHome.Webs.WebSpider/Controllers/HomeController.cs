@@ -1,13 +1,9 @@
-﻿using Models;
-using Models.DAL;
-using Models.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using TechHome.Webs.WebSpider.Models;
-using WrapperExtensions;
+using TechHome.Webs.WebSpider.Models.DAL;
+using TechHome.Webs.WebSpider.Models.Validation;
+using TechHome.Webs.WebSpider.Models.ViewModel;
 
 namespace TechHome.Webs.WebSpider.Controllers
 {
