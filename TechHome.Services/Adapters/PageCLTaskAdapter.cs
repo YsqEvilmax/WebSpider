@@ -19,7 +19,7 @@ namespace TechHome.Services.Adapters
                 Element movie = page.Results.First(x => x.Name.Equals("movie"));
                 Element title = page.Results.First(x => x.Name.Equals("title"));
                 string extension = Regex.Match(movie.Value, @"(?<=http://(\w|\.|\/)+)\.(mp4|avi)").Value;
-                return new CLTask() {Uri = new Uri(movie.Value), FileName = title.Value + extension};
+                return new CLTask() {Uri = movie.Value, FileName = title.Value + extension};
             }
             return null;
         }

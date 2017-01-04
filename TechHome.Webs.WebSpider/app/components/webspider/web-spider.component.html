@@ -1,0 +1,29 @@
+  <ul>
+    <li *ngFor="let task of tasks">
+      <div>
+        <label>Url:</label>
+        <input [(ngModel)]="task.url" placeholder="url"/>
+      </div>
+      <div>
+        <label>Template:</label>
+        <input [(ngModel)]="task.template" placeholder="template"/>
+      </div>
+    </li>
+  </ul>
+  <button (click)="GetResults()">Get Results</button>
+  <ul>
+    <li *ngFor="let result of results">
+      <div>
+        <label>Uri:</label>
+        {{result.uri.absoluteUri}}
+      </div>
+      <div>
+        <label>FileName:</label>
+        {{result.fileName}}
+      </div>
+      <div>
+        <label>State:</label>
+        {{result.state}}
+      </div>
+    </li>
+  </ul>

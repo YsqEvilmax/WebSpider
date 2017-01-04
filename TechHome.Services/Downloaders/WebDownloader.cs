@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace TechHome.Services.Downloaders
                     Path.Combine(completed, task.FileName));
                 RoundUp();
             });
-            client.DownloadFileAsync(task.Uri, Path.Combine(task.FolderPath, task.FileName));         
+            client.DownloadFileAsync(new Uri(task.Uri), Path.Combine(task.FolderPath, task.FileName));         
         }
 
         public void AddTasks(List<ITask> tasks)

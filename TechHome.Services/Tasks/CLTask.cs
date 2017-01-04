@@ -13,7 +13,7 @@ namespace TechHome.Services.Tasks
         {
             State = State.Ready;
         }
-        public Uri Uri { get; set; }
+        public string Uri { get; set; }
         public string FileName { get; set; }
         public string FolderPath { get { return Properties.Settings.Default["DownloadsFolder"] as string; } }
         public string Comment { get { return "Auto - download"; } }
