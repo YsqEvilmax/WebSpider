@@ -167,6 +167,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WebTasksController.cs" />
     <Compile Include="Global.asax.cs">
@@ -248,11 +249,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\boottodolist.ts" />
+    <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\components\todolist\todolist.component.ts" />
     <TypeScriptCompile Include="app\components\webspider\web-spider.component.ts" />
     <TypeScriptCompile Include="app\services\api.service.ts" />
     <TypeScriptCompile Include="app\services\app.service.todolist.ts" />
+    <TypeScriptCompile Include="app\services\error.service.ts" />
     <TypeScriptCompile Include="app\services\http.service.ts" />
     <TypeScriptCompile Include="app\utils\HttpHelpers.ts" />
     <TypeScriptCompile Include="Scripts\Enums.ts">

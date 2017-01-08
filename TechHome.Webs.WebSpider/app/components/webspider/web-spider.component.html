@@ -2,28 +2,28 @@
     <li *ngFor="let task of tasks">
       <div>
         <label>Url:</label>
-        <input [(ngModel)]="task.url" placeholder="url"/>
+        <input [(ngModel)]="task.Url" placeholder="url"/>
       </div>
       <div>
         <label>Template:</label>
-        <input [(ngModel)]="task.template" placeholder="template"/>
+        <input [(ngModel)]="task.Template" placeholder="template"/>
       </div>
     </li>
   </ul>
-  <button (click)="GetResults()">Get Results</button>
+  <button (click)="updateResults()">Get Results</button>
   <ul>
     <li *ngFor="let result of results">
       <div>
         <label>Uri:</label>
-        {{result.uri.absoluteUri}}
+        {{result.Uri}}
       </div>
       <div>
         <label>FileName:</label>
-        {{result.fileName}}
+        {{result.FileName}}
       </div>
       <div>
         <label>State:</label>
-        {{result.state}}
+        {{result.State}}
       </div>
     </li>
   </ul>

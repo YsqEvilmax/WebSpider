@@ -4,11 +4,14 @@
 @section scripts{
     @Html.Partial("_DefineAngular")
     <script>
-        System.import('app/boottodolist');
+        System.import('app/main');
     </script>
 }
-<todolist class="todolistcontent">
+@*<todolist class="todolistcontent">
     <div class="waitloading">
         loading...
     </div>
-</todolist>
+</todolist>*@
+<web-spider>
+    play
+</web-spider>

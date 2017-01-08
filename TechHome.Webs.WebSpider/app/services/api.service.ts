@@ -1,34 +1,48 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { HttpService } from './http.service';
+import { ErrorService } from './error.service';
 
 @Injectable()
-export class ApiService extends HttpService{
+export class ApiService{
     public apiBase:string;
-    constructor(http: Http) {
-        super(http);
+    constructor(private http: HttpService,
+        private error: ErrorService) {
     }
     public create<T>(param: T) {
-        return this.post<T, T>(this.apiBase, param);
+        return this.handleSubscribe<T>(
+            this.http.post<T, T>(this.apiBase, param));
     }
 
     public createFrom<T, P>(param: P) {
-        return this.post<T, P>(this.apiBase, param);
+        return this.handleSubscribe<T>(
+            this.http.post<T, P>(this.apiBase, param));
     }
 
     public retrives<T>() {
-        return this.get<T[]>(this.apiBase);
+        return this.handleSubscribe<T[]>(
+            this.http.get<T[]>(this.apiBase));
     }
 
     public retrive<T>(id: number) {
-        return this.get<T>(`${this.apiBase}/${id}`);
+        return this.handleSubscribe<T>(
+            this.http.get<T>(`${this.apiBase}/${id}`));
     }
 
-    public update<T>(id:number, param: T) {
-        return this.put<T>(`${this.apiBase}/${id}`, param);
+    public update<T>(id: number, param: T) {
+        return this.handleSubscribe<T>(
+            this.http.put<T>(`${this.apiBase}/${id}`, param));
     }
 
-    public remove<T>(id: number){
-        return this.delete<T>(`${this.apiBase}/${id}`);
+    public remove<T>(id: number) {
+        return this.handleSubscribe<T>(
+            this.http.delete<T>(`${this.apiBase}/${id}`));
+    }
+
+    private handleSubscribe<T>(fun) {
+        let result: T = null;
+        fun.subscribe(res => {
+                result = res;
+            }, err => this.error.handleError(err));
+        return result;
     }
 }

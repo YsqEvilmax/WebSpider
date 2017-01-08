@@ -5,8 +5,8 @@ import ITask = TechHome.Services.Tasks.ITask;
 
 @Component({
   selector: 'web-spider',
-  templateUrl: './web-spider.component.html',
-  styleUrls: ['./web-spider.component.css']
+  templateUrl: './app/components/webspider/web-spider.component.html',
+  styleUrls: ['./app/components/webspider/web-spider.component.css']
 })
 export class WebSpiderComponent implements OnInit {
     tasks: Models.WebTask[];
@@ -20,12 +20,11 @@ export class WebSpiderComponent implements OnInit {
               Template: "CLPage.xml"
           }
       ];
-      this.api.apiBase = 'http://localhost:61797/api/WebTasks';
+      this.api.apiBase = 'http://localhost:56580/api/WebTasks';
   }
 
-  GetResults() {
-      this.api.createFrom<ITask[], Models.WebTask[]>(this.tasks).then((res) => {
-          this.results = res;
-      });
+  updateResults() {
+      this.results = this.api.createFrom<ITask[], Models.WebTask[]>(this.tasks);
+      console.log(this.results);
   }
 }
