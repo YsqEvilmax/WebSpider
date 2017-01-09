@@ -24,7 +24,9 @@ export class WebSpiderComponent implements OnInit {
   }
 
   updateResults() {
-      this.results = this.api.createFrom<ITask[], Models.WebTask[]>(this.tasks);
-      console.log(this.results);
+      this.api.createFrom<ITask[], Models.WebTask[]>(this.tasks)
+          .then(res => {
+              this.results = res;
+          });   
   }
 }

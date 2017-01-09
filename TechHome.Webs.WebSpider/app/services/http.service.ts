@@ -15,8 +15,9 @@ export class HttpService {
     public get<T>(path: string){
         return this.http
             .get(path)
-            .map(res => res.json().data as T)
-            .catch(this.handleError) as Observable<T>;
+            .toPromise()
+            .then(res => res.json() as T)
+            .catch(this.handleError);
     }
 
     public post<T, P>(path: string, param: P) {
@@ -24,8 +25,9 @@ export class HttpService {
         let options = new RequestOptions({ headers: this.headers });
         return this.http
             .post(path, body, options)
-            .map(res => res.json().data as T)
-            .catch(this.handleError) as Observable<T>;
+            .toPromise()
+            .then(res => res.json() as T)
+            .catch(this.handleError);
     }
 
     public put<T>(path: string, param: T) {
@@ -33,16 +35,18 @@ export class HttpService {
         let options = new RequestOptions({ headers: this.headers });
         return this.http
             .put(path, body, options)
-            .map(() => param)
-            .catch(this.handleError) as Observable<T>;
+            .toPromise()
+            .then(() => param)
+            .catch(this.handleError);
     }
 
     public delete<T>(path:string) {
         let options = new RequestOptions({ headers: this.headers });
         return this.http
             .delete(path, options)
-            .map(() => null)
-            .catch(this.handleError) as Observable<T>;
+            .toPromise()
+            .then(() => null)
+            .catch(this.handleError);
     }
 
     private handleError(error: Response) {
