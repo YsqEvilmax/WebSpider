@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { ApiService } from "../../services/api.service";
 import ITask = TechHome.Services.Tasks.ITask;
+import State = TechHome.Services.Tasks.State;
 
 @Component({
   selector: 'web-spider',
@@ -9,6 +10,7 @@ import ITask = TechHome.Services.Tasks.ITask;
   styleUrls: ['./app/components/webspider/web-spider.component.css']
 })
 export class WebSpiderComponent implements OnInit {
+    state = State;
     tasks: Models.WebTask[];
   results: ITask[];
   constructor(private api:ApiService) { }
